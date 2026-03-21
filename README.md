@@ -58,29 +58,29 @@ npx playwrite install
 
 ## 🚀 Запуск тестов
 
-Запуск всех тестов
+**Запуск всех тестов**
 ```bash
 npm test
 ```
-Запуск в режиме UI
+**Запуск в режиме UI**
 ```bash
 npx playwright test --ui
 ```
 
-Запуск конкретного теста
+**Запуск конкретного теста**
 ```bash
 npx playwright test tests/text-box.spec.ts
 ```
 
-Запуск в headed режиме (с открытием браузера)
+**Запуск в headed режиме (с открытием браузера)**
 ```bash
 npx playwright test --headed
 ```
-Запуск с отладкой
+**Запуск с отладкой**
 ```bash
 npx playwright test --debug
 ```
-Запуск тестов по тегам
+**Запуск тестов по тегам**
 ```bash
 npx playwright test --grep "@smoke"
 ```
@@ -102,15 +102,12 @@ npx playwright test --grep "@smoke"
 Отчёты сохраняются в папке **playwright-report/**.
 
 ## 📝 Полезные команды
-Запуск всех тестов
-```bash
-npm test
-```
-Открыть HTML отчёт
+
+**Открыть HTML отчёт**
 ```bash
 npx playwright show-report
 ```
-Генератор кода
+**Генератор кода**
 ```bash
 npx playwright codegen
 ```
