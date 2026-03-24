@@ -28,18 +28,18 @@
 
 ## 🔧 Установка
 
-1. Клонирование репозитория:
+**1. Клонирование репозитория:**
 ```bash
 git clone https://github.com/JoehFlu/playwright-tests.git
 cd playwright-tests
 ```
-2. Установка зависимостей
+**2. Установка зависимостей**
 ```bash
 npm install
 ```
-3. Установка браузеров Playwrite
+**3. Установка браузеров Playwright**
 ```bash
-npx playwrite install
+npx playwright install
 ```
 ## 📁 Структура проекта
 
