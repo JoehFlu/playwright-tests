@@ -1,16 +1,19 @@
 {
   "name": "playwright-tests",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Local Playwright practice project for testing a student registration form.",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
-    "test:report": "playwright test --reporter=html"
+    "test:ui": "playwright test --ui"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "e2e",
+    "testing",
+    "automation",
+    "practice"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.58.2",

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <section class="card">
+        <div class="divider"></div>
+        <h1>Student Registration Form</h1>
+        <form id="student-form">
+          <label class="label" for="firstName">Name</label>
+          <div class="field-group" data-testid="name-group">
+            <div class="field-row two-col">
+              <input id="firstName" name="firstName" type="text" placeholder="First Name" required data-testid="first-name" />
+              <input id="lastName" name="lastName" type="text" placeholder="Last Name" required data-testid="last-name" />
+            </div>
+            <div class="field-error" id="nameError" data-testid="name-error"></div>
+          </div>
+
+          <label class="label" for="email">Email</label>
+          <div class="field-group" data-testid="email-group">
+            <input id="email" name="email" type="email" placeholder="name@example.com" required data-testid="email" />
+            <div class="field-error" id="emailError" data-testid="email-error"></div>
+          </div>
+
+          <span class="label">Gender</span>
+          <div class="field-group" data-testid="gender-group">
+            <div class="radio-group" role="radiogroup" aria-label="Gender">
+              <label class="option" for="gender-male">
+                <input id="gender-male" name="gender" type="radio" value="Male" required data-testid="gender-male" />
+                <span>Male</span>
+              </label>
+              <label class="option" for="gender-female">
+                <input id="gender-female" name="gender" type="radio" value="Female" data-testid="gender-female" />
+                <span>Female</span>
+              </label>
+              <label class="option" for="gender-other">
+                <input id="gender-other" name="gender" type="radio" value="Other" data-testid="gender-other" />
+                <span>Other</span>
+              </label>
+            </div>
+            <div class="field-error" id="genderError" data-testid="gender-error"></div>
+          </div>
+
+          <label class="label" for="mobile">Mobile<small> (10 Digits)</small></label>
+          <div class="field-group" data-testid="mobile-group">
+            <input
+              id="mobile"
+              name="mobile"
+              type="tel"
+              placeholder="Mobile Number"
+              inputmode="numeric"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              required
+              title="Mobile number must contain exactly 10 digits"
+              data-testid="mobile"
+            />
+            <div class="field-error" id="mobileError" data-testid="mobile-error"></div>
+          </div>
+
+          <label class="label" for="dateOfBirth">Date of Birth</label>
+          <div class="field-group" data-testid="date-of-birth-group">
+            <input
+              id="dateOfBirth"
+              name="dateOfBirth"
+              type="text"
+              placeholder="00.00.00"
+              required
+              inputmode="numeric"
+              maxlength="8"
+              data-testid="date-of-birth"
+            />
+            <div class="field-error" id="dateOfBirthError" data-testid="date-of-birth-error"></div>
+          </div>
+
+          <label class="label" for="subjectsInput">Subjects</label>
+          <div class="field-group" data-testid="subjects-group">
+            <div class="subject-input">
+              <div class="subject-display" id="subjectsBox" aria-live="polite">
+                <input
+                  id="subjectsInput"
+                  type="text"
+                  autocomplete="off"
+                  placeholder=""
+                  aria-expanded="false"
+                  aria-controls="subjectsList"
+                  data-testid="subjects-input"
+                />
+              </div>
+              <ul class="suggestions" id="subjectsList" role="listbox"></ul>
+            </div>
+            <div class="field-error" id="subjectsError" data-testid="subjects-error"></div>
+          </div>
+
+          <span class="label">Directions Hint</span>
+          <div class="accordion-wrap" data-testid="directions-accordion">
+            <button
+              class="accordion-trigger"
+              type="button"
+              id="directionsToggle"
+              aria-expanded="false"
+              aria-controls="directionsPanel"
+              data-testid="directions-toggle"
+            >
+              <span class="accordion-title">What subjects can I choose?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div
+              class="accordion-panel"
+              id="directionsPanel"
+              role="region"
+              aria-labelledby="directionsToggle"
+              data-testid="directions-panel"
+              hidden
+            >
+              <p>Choose subjects only from the suggestions that appear while typing.</p>
+              <ul class="accordion-list">
+                <li>Available options: Maths, Physics, Chemistry, Computer Science, English.</li>
+                <li>Also available: Economics, Arts, Accounting, Biology, History.</li>
+                <li>The field becomes valid only after at least one subject is added as a chip.</li>
+              </ul>
+              <p>Typing a value that is not in the list will not be accepted.</p>
+            </div>
+          </div>
+
+          <span class="label">Hobbies</span>
+          <div class="field-group" data-testid="hobbies-group">
+            <div class="checkbox-group">
+              <label class="option" for="hobby-sports">
+                <input id="hobby-sports" name="hobbies" type="checkbox" value="Sports" data-testid="hobby-sports" />
+                <span>Sports</span>
+              </label>
+              <label class="option" for="hobby-reading">
+                <input id="hobby-reading" name="hobbies" type="checkbox" value="Reading" data-testid="hobby-reading" />
+                <span>Reading</span>
+              </label>
+              <label class="option" for="hobby-music">
+                <input id="hobby-music" name="hobbies" type="checkbox" value="Music" data-testid="hobby-music" />
+                <span>Music</span>
+              </label>
+            </div>
+            <div class="field-error" id="hobbiesError" data-testid="hobbies-error"></div>
+          </div>
+
+          <label class="label" for="picture">Picture</label>
+          <div class="field-group" data-testid="picture-group">
+            <div class="field-row">
+              <div class="file-picker">
+                <label class="file-label" for="picture">
+                  Choose file
+                  <input id="picture" name="picture" type="file" accept="image/*" multiple data-testid="picture" />
+                </label>
+                <div class="file-display" id="fileName">No file selected</div>
+              </div>
+              <div class="picture-preview" id="picturePreviewBox" hidden data-testid="picture-preview-box">
+                <span id="picturePreviewStatus">No images selected</span>
+                <div class="picture-preview-grid" id="picturePreviewGrid" data-testid="picture-preview-grid"></div>
+              </div>
+            </div>
+            <div class="field-error" id="pictureError" data-testid="picture-error"></div>
+          </div>
+
+          <label class="label" for="address">Current Address</label>
+          <div class="field-group" data-testid="address-group">
+            <textarea id="address" name="address" placeholder="Current Address" required data-testid="address"></textarea>
+            <div class="field-error" id="addressError" data-testid="address-error"></div>
+          </div>
+
+          <span class="label">State and City</span>
+          <div class="field-group" data-testid="state-city-group">
+            <div class="select-row">
+              <select id="state" name="state" required data-testid="state">
+                <option value="">Select State</option>
+                <option value="California">California</option>
+                <option value="Texas">Texas</option>
+                <option value="Florida">Florida</option>
+                <option value="New York">New York</option>
+              </select>
+              <select id="city" name="city" required data-testid="city">
+                <option value="">Select City</option>
+              </select>
+            </div>
+            <div class="field-error" id="stateCityError" data-testid="state-city-error"></div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" id="submit" data-testid="submit">Submit</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="modal" id="resultModal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" data-testid="result-modal">
+        <div class="modal-header">
+          <h2 id="modalTitle">Thanks for submitting the form</h2>
+          <button class="close-btn" type="button" id="closeModal" aria-label="Close modal">&times;</button>
+        </div>
+        <table>
+          <tbody id="resultBody"></tbody>
+        </table>
+        <div class="modal-footer">
+          <button class="secondary-btn" type="button" id="closeFooter">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
